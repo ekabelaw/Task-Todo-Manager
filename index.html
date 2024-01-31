@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/public/styles/style.css">
+  <title>Todo List Excercise</title>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    
+    <div class="user-wrap">
+      <a href="#" class="user-container">
+        <div class="user-pict">
+          <div class="onlineicon"></div>
+          JD
+        </div>
+        
+        <div class="user-detail">
+          <div class="user-greetings">Hello</div>
+          <div class="username">John Doe</div>
+        </div>
+      </a>
+    </div>
+    
+    <ul class="side-menu">
+      <li >
+        <a href="#">
+          <svg class="side-menu-icon" opacity="0.4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 22 22">
+            <path class="side-menu-icon" opacity="0.4"
+              d="M14.7359 1.83333H17.8397C19.1251 1.83333 20.1666 2.88369 20.1666 4.17996V7.30998C20.1666 8.60625 19.1251 9.65661 17.8397 9.65661H14.7359C13.4504 9.65661 12.4089 8.60625 12.4089 7.30998V4.17996C12.4089 2.88369 13.4504 1.83333 14.7359 1.83333Z"
+              />
+            <path class="side-menu-icon"
+              d="M7.2641 12.3434C8.54951 12.3434 9.59108 13.3937 9.59108 14.69V17.82C9.59108 19.1154 8.54951 20.1667 7.2641 20.1667H4.16029C2.87488 20.1667 1.83331 19.1154 1.83331 17.82V14.69C1.83331 13.3937 2.87488 12.3434 4.16029 12.3434H7.2641ZM17.8397 12.3434C19.1251 12.3434 20.1666 13.3937 20.1666 14.69V17.82C20.1666 19.1154 19.1251 20.1667 17.8397 20.1667H14.7359C13.4505 20.1667 12.4089 19.1154 12.4089 17.82V14.69C12.4089 13.3937 13.4505 12.3434 14.7359 12.3434H17.8397ZM7.2641 1.83333C8.54951 1.83333 9.59108 2.88369 9.59108 4.17996V7.30998C9.59108 8.60625 8.54951 9.65661 7.2641 9.65661H4.16029C2.87488 9.65661 1.83331 8.60625 1.83331 7.30998V4.17996C1.83331 2.88369 2.87488 1.83333 4.16029 1.83333H7.2641Z"
+              />
+          </svg>
+          Overview
+        </a>
+      </li>
+      <li >
+        <a href="#">
+          <svg class="side-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" opacity="0.4">
+            <path class="side-menu-icon"
+              d="M14.713 16.5825C14.2964 16.5733 13.9613 16.225 13.9613 15.8033C13.9523 15.3817 14.2873 15.0343 14.7039 15.0251H14.713C15.1386 15.0251 15.4827 15.3734 15.4827 15.8033C15.4827 16.2342 15.1386 16.5825 14.713 16.5825ZM11.0181 13.2092C10.6015 13.2284 10.2574 12.8975 10.2393 12.4768C10.2393 12.0551 10.5653 11.7068 10.9819 11.6875C11.3894 11.6875 11.7245 12.0093 11.7335 12.4208C11.7516 12.8434 11.4256 13.1918 11.0181 13.2092ZM11.0181 16.5367C10.6015 16.5559 10.2574 16.225 10.2393 15.8033C10.2393 15.3817 10.5653 15.0343 10.9819 15.015C11.3894 15.015 11.7245 15.3368 11.7335 15.7493C11.7516 16.1709 11.4256 16.5193 11.0181 16.5367ZM7.2961 13.2092C6.87953 13.2284 6.5354 12.8975 6.51729 12.4768C6.51729 12.0551 6.8433 11.7068 7.25988 11.6875C7.6674 11.6875 8.00247 12.0093 8.01153 12.4208C8.02964 12.8434 7.70362 13.1918 7.2961 13.2092ZM7.28705 16.5367C6.87047 16.5559 6.52634 16.225 6.50823 15.8033C6.50823 15.3817 6.83425 15.0343 7.25082 15.015C7.65834 15.015 7.99341 15.3368 8.00247 15.7493C8.02058 16.1709 7.69457 16.5193 7.28705 16.5367ZM13.9704 12.4676C13.9704 12.0459 14.2964 11.7068 14.713 11.6976C15.1205 11.6976 15.4465 12.0267 15.4646 12.4309C15.4737 12.8526 15.1476 13.2009 14.7401 13.2092C14.3235 13.2183 13.9794 12.8975 13.9704 12.4768V12.4676ZM2.75 8.4856V15.4642C2.75 18.3608 4.57931 20.1667 7.45006 20.1667H14.5409C17.4388 20.1667 19.25 18.3975 19.25 15.5201V8.4856H2.75Z"
+              />
+            <path class="side-menu-icon" opacity="0.4"
+              d="M2.75305 8.48551C2.76482 7.94743 2.8101 6.87951 2.89523 6.53576C3.32992 4.60251 4.80604 3.37418 6.91609 3.1991H15.0846C17.1765 3.38335 18.6708 4.61993 19.1054 6.53576C19.1897 6.87035 19.2349 7.94651 19.2467 8.48551H2.75305Z"
+              />
+            <path class="side-menu-icon"
+              d="M7.61278 6.04084C8.01124 6.04084 8.31009 5.73926 8.31009 5.33501V2.54009C8.31009 2.13584 8.01124 1.83334 7.61278 1.83334C7.21431 1.83334 6.91547 2.13584 6.91547 2.54009V5.33501C6.91547 5.73926 7.21431 6.04084 7.61278 6.04084Z"
+              />
+            <path class="side-menu-icon" 
+              d="M14.387 6.04084C14.7764 6.04084 15.0843 5.73926 15.0843 5.33501V2.54009C15.0843 2.13584 14.7764 1.83334 14.387 1.83334C13.9885 1.83334 13.6897 2.13584 13.6897 2.54009V5.33501C13.6897 5.73926 13.9885 6.04084 14.387 6.04084Z"
+              />
+          </svg>
+          Calendar
+        </a>
+        
+      </li>
+      <li >
+        <a href="#">
+          <svg class="side-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" opacity="0.4">
+            <path class="side-menu-icon" 
+              d="M9.30667 5.09257C9.35336 5.1876 9.38419 5.28936 9.398 5.39398L9.65323 9.18891L9.77993 11.0963C9.78124 11.2925 9.81201 11.4874 9.87126 11.6747C10.0243 12.0382 10.3924 12.2692 10.7929 12.2531L16.8954 11.8539C17.1596 11.8496 17.4148 11.9484 17.6048 12.1287C17.7631 12.2789 17.8653 12.4754 17.8975 12.6868L17.9083 12.8152C17.6558 16.312 15.0875 19.2286 11.598 19.9815C8.1084 20.7344 4.53002 19.1439 2.80563 16.0737C2.3085 15.1817 1.99799 14.2012 1.89233 13.1899C1.84819 12.8905 1.82875 12.5881 1.83421 12.2857C1.82876 8.53668 4.49849 5.29555 8.23562 4.51419C8.6854 4.44416 9.12634 4.68227 9.30667 5.09257Z"
+              />
+            <path class="side-menu-icon" opacity="0.4"
+              d="M11.7975 1.83409C15.9774 1.94043 19.4904 4.94615 20.1666 8.99461L20.1602 9.02448L20.1417 9.06793L20.1443 9.18717C20.1347 9.34516 20.0737 9.49717 19.9686 9.61995C19.8591 9.74785 19.7095 9.83495 19.5448 9.86876L19.4443 9.88255L12.4036 10.3387C12.1694 10.3618 11.9362 10.2863 11.762 10.131C11.6169 10.0015 11.5241 9.82676 11.4979 9.63846L11.0253 2.60798C11.0171 2.58421 11.0171 2.55844 11.0253 2.53467C11.0318 2.34088 11.1171 2.1577 11.2622 2.02605C11.4073 1.89441 11.6001 1.82528 11.7975 1.83409Z"
+              />
+          </svg>
+          Analytics
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="side-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" opacity="0.4">
+            <path class="side-menu-icon"
+              d="M14.037 3.66669C13.9937 3.88944 13.9721 4.11587 13.9725 4.34278C13.9725 6.37869 15.6254 8.02913 17.6643 8.02913C17.8888 8.02802 18.1127 8.00647 18.3333 7.96474V15.273C18.3333 18.3477 16.5197 20.1667 13.4405 20.1667H6.73414C3.64694 20.1667 1.83331 18.3477 1.83331 15.273V8.57644C1.83331 5.50181 3.64694 3.66669 6.73414 3.66669H14.037ZM14.0403 9.16814C13.861 9.19393 13.6999 9.29117 13.5937 9.43766L11.3851 12.2789L8.8702 10.2989C8.72661 10.187 8.54396 10.1376 8.36347 10.1619C8.18298 10.1861 8.01988 10.2819 7.91099 10.4277L5.20263 13.9208C5.10744 14.0395 5.05618 14.1873 5.05754 14.3394L5.05992 14.4405C5.08618 14.7064 5.26851 14.9361 5.52966 15.0185C5.82345 15.1112 6.14291 14.9942 6.30693 14.7338L8.57196 11.804L11.0869 13.776C11.2299 13.8913 11.4138 13.9436 11.5962 13.9208C11.7786 13.898 11.9439 13.8022 12.0541 13.6552L14.6738 10.2747V10.2586C14.8981 9.95728 14.8409 9.53234 14.5448 9.30083C14.4016 9.19023 14.2195 9.14235 14.0403 9.16814Z"
+              />
+            <path class="side-menu-icon" opacity="0.4"
+              d="M17.875 6.41668C19.1406 6.41668 20.1666 5.39066 20.1666 4.12501C20.1666 2.85936 19.1406 1.83334 17.875 1.83334C16.6093 1.83334 15.5833 2.85936 15.5833 4.12501C15.5833 5.39066 16.6093 6.41668 17.875 6.41668Z"
+              />
+          </svg>
+          Activity
+        </a>
+      </li>
+      <li >
+        <a href="#">
+          <svg class="side-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" opacity="0.4">
+            <path class="side-menu-icon" opacity="0.4"
+              d="M15.4773 4.68862H12.7795C12.1074 4.69306 11.4693 4.3941 11.0434 3.87522L10.155 2.647C9.73624 2.12357 9.09817 1.82321 8.42709 1.8336H6.51987C3.09665 1.8336 1.83331 3.84269 1.83331 7.25894V10.9518C1.82906 11.3579 20.1627 11.3573 20.1638 10.9518V9.87807C20.1801 6.46182 18.9494 4.68862 15.4773 4.68862Z"
+              />
+            <path class="side-menu-icon"
+              d="M15.4691 4.6886C16.6652 4.5961 17.8523 4.95617 18.7945 5.69721C18.903 5.78923 19.0039 5.88988 19.0961 5.99817C19.3894 6.34108 19.616 6.73553 19.7644 7.16132C20.0565 8.03645 20.1917 8.9561 20.1638 9.87806V14.6934C20.1626 15.0989 20.1327 15.5039 20.0742 15.9053C19.9627 16.6136 19.7135 17.2934 19.3406 17.9063C19.1692 18.2023 18.9611 18.4756 18.7212 18.7197C17.6351 19.7164 16.1929 20.2353 14.7193 20.1594H7.26971C5.79377 20.2347 4.34921 19.7161 3.25965 18.7197C3.0226 18.4751 2.81723 18.2018 2.64837 17.9063C2.27767 17.2938 2.03378 16.6134 1.93112 15.9053C1.86584 15.5046 1.83331 15.0993 1.83331 14.6934V9.87806C1.83331 9.4759 1.85492 9.07403 1.89852 8.67424C1.92297 8.48716 1.98002 8.30821 1.98002 8.12926C2.06276 7.6468 2.21369 7.17849 2.4283 6.73836C3.06404 5.37999 4.36812 4.6886 6.50356 4.6886H15.4691ZM15.6892 12.7331H6.38945C5.97082 12.7331 5.63145 13.0718 5.63145 13.4895C5.63145 13.9073 5.97082 14.246 6.38945 14.246H15.6321C15.8346 14.2548 16.0321 14.1823 16.1807 14.0448C16.3292 13.9072 16.4164 13.7161 16.4227 13.5139C16.4342 13.3363 16.3757 13.1612 16.2597 13.0259C16.1263 12.8441 15.9149 12.7356 15.6892 12.7331Z"
+              />
+          </svg>
+          Projects
+        </a>
+      </li>
+    </ul>
+
+    <!-- <hr class="divider"> -->
+
+    <div class="task-container">
+      <div class="task-title">
+        <h3>Task</h3>
+        <i class="bi bi-plus"></i>
+      </div>
+      <div class="task-index-wrap">
+        <div class="task-index">
+          <div class="task-name-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none">
+              <path opacity="0.4"
+                d="M16.1223 0H5.87889C2.16333 0 0 2.17556 0 5.90333V18.5289C0 22.3178 2.16333 24.4444 5.87889 24.4444H16.1223C19.8978 24.4444 22 22.3178 22 18.5289V5.90333C22 2.17556 19.8978 0 16.1223 0Z"
+                fill="#FD71AF" />
+              <path
+                d="M6.2089 16.7933H15.7911C16.2788 16.8422 16.6467 17.2578 16.6467 17.7589C16.6467 18.2466 16.2788 18.6633 15.7911 18.7122H6.2089C5.84224 18.7611 5.48779 18.5778 5.29224 18.2722C5.09668 17.9545 5.09668 17.5511 5.29224 17.2456C5.48779 16.9278 5.84224 16.7567 6.2089 16.7933ZM15.7911 11.2188C16.3167 11.2188 16.7445 11.6478 16.7445 12.1733C16.7445 12.6989 16.3167 13.1267 15.7911 13.1267H6.2089C5.68212 13.1267 5.25557 12.6989 5.25557 12.1733C5.25557 11.6478 5.68212 11.2188 6.2089 11.2188H15.7911ZM9.86212 5.68335C10.3889 5.68335 10.8167 6.11113 10.8167 6.63546C10.8167 7.17446 10.3889 7.60224 9.86212 7.60224H6.2089C5.68212 7.60224 5.25557 7.17446 5.25557 6.64891C5.25557 6.12335 5.68212 5.69557 6.2089 5.69557V5.68335H9.86212Z"
+                fill="#FD71AF" />
+            </svg>
+            <span class="task-name">Getting Elements</span>
+          </div>
+          <p class="number">15</p>
+        </div>
+        <div class="task-index">
+          <div class="task-name-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none">
+              <path opacity="0.4"
+                d="M16.1223 0.444458H5.87889C2.16333 0.444458 0 2.62001 0 6.34779V18.9733C0 22.7622 2.16333 24.8889 5.87889 24.8889H16.1223C19.8978 24.8889 22 22.7622 22 18.9733V6.34779C22 2.62001 19.8978 0.444458 16.1223 0.444458Z"
+                fill="#49CCF9" />
+              <path
+                d="M6.2089 17.2378H15.7911C16.2788 17.2867 16.6467 17.7022 16.6467 18.2034C16.6467 18.691 16.2788 19.1078 15.7911 19.1567H6.2089C5.84224 19.2056 5.48779 19.0223 5.29224 18.7167C5.09668 18.3989 5.09668 17.9956 5.29224 17.69C5.48779 17.3722 5.84224 17.2011 6.2089 17.2378ZM15.7911 11.6633C16.3167 11.6633 16.7445 12.0923 16.7445 12.6178C16.7445 13.1434 16.3167 13.5711 15.7911 13.5711H6.2089C5.68212 13.5711 5.25557 13.1434 5.25557 12.6178C5.25557 12.0923 5.68212 11.6633 6.2089 11.6633H15.7911ZM9.86212 6.12781C10.3889 6.12781 10.8167 6.55559 10.8167 7.07992C10.8167 7.61892 10.3889 8.0467 9.86212 8.0467H6.2089C5.68212 8.0467 5.25557 7.61892 5.25557 7.09336C5.25557 6.56781 5.68212 6.14003 6.2089 6.14003V6.12781H9.86212Z"
+                fill="#49CCF9" />
+            </svg>
+            <span class="task-name">Querying The Dom</span>
+          </div>
+          <p class="number">7</p>
+        </div>
+        <div class="task-index">
+          <div class="task-name-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 26" fill="none">
+              <path opacity="0.4"
+                d="M16.1223 0.888916H5.87889C2.16333 0.888916 0 3.06447 0 6.79225V19.4178C0 23.2067 2.16333 25.3334 5.87889 25.3334H16.1223C19.8978 25.3334 22 23.2067 22 19.4178V6.79225C22 3.06447 19.8978 0.888916 16.1223 0.888916Z"
+                fill="#7B68EE" />
+              <path
+                d="M6.2089 17.6823H15.7911C16.2788 17.7312 16.6467 18.1467 16.6467 18.6478C16.6467 19.1355 16.2788 19.5523 15.7911 19.6012H6.2089C5.84224 19.65 5.48779 19.4667 5.29224 19.1612C5.09668 18.8434 5.09668 18.44 5.29224 18.1345C5.48779 17.8167 5.84224 17.6456 6.2089 17.6823ZM15.7911 12.1077C16.3167 12.1077 16.7445 12.5367 16.7445 13.0623C16.7445 13.5878 16.3167 14.0156 15.7911 14.0156H6.2089C5.68212 14.0156 5.25557 13.5878 5.25557 13.0623C5.25557 12.5367 5.68212 12.1077 6.2089 12.1077H15.7911ZM9.86212 6.57227C10.3889 6.57227 10.8167 7.00004 10.8167 7.52438C10.8167 8.06338 10.3889 8.49115 9.86212 8.49115H6.2089C5.68212 8.49115 5.25557 8.06338 5.25557 7.53782C5.25557 7.01227 5.68212 6.58449 6.2089 6.58449V6.57227H9.86212Z"
+                fill="#7B68EE" />
+            </svg>
+            <span class="task-name">Creating Elements</span>
+          </div>
+          <p class="number">12</p>
+        </div>
+        <div class="task-index">
+          <div class="task-name-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25" fill="none">
+              <path opacity="0.4"
+                d="M16.1223 0.333313H5.87889C2.16333 0.333313 0 2.50887 0 6.23665V18.8622C0 22.6511 2.16333 24.7778 5.87889 24.7778H16.1223C19.8978 24.7778 22 22.6511 22 18.8622V6.23665C22 2.50887 19.8978 0.333313 16.1223 0.333313Z"
+                fill="#00B884" />
+              <path
+                d="M6.2089 17.1267H15.7911C16.2788 17.1756 16.6467 17.5911 16.6467 18.0922C16.6467 18.5799 16.2788 18.9967 15.7911 19.0456H6.2089C5.84224 19.0944 5.48779 18.9111 5.29224 18.6055C5.09668 18.2878 5.09668 17.8844 5.29224 17.5789C5.48779 17.2611 5.84224 17.09 6.2089 17.1267ZM15.7911 11.5521C16.3167 11.5521 16.7445 11.9811 16.7445 12.5067C16.7445 13.0322 16.3167 13.46 15.7911 13.46H6.2089C5.68212 13.46 5.25557 13.0322 5.25557 12.5067C5.25557 11.9811 5.68212 11.5521 6.2089 11.5521H15.7911ZM9.86212 6.01666C10.3889 6.01666 10.8167 6.44444 10.8167 6.96877C10.8167 7.50777 10.3889 7.93555 9.86212 7.93555H6.2089C5.68212 7.93555 5.25557 7.50777 5.25557 6.98222C5.25557 6.45666 5.68212 6.02888 6.2089 6.02888V6.01666H9.86212Z"
+                fill="#00B884" />
+            </svg>
+            <span class="task-name">Modifying Element Classes</span>
+          </div>
+          <p class="number">15</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <!-- End Sidebar-->
+  
+  <!-- Main Content-->
+  <div class="content">
+    <!-- Navbar -->
+    <nav>
+
+      <div class="navbar">
+        <a class="foldicon">
+          <i class="bi bi-chevron-double-left"></i>
+        </a>
+        <div class="nav-view">
+          <button class="nav-btn task">
+            <div class="nav-btn-wrap">
+              <svg class="nav-icon stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4483F7">
+                <path d="M12.37 8.88H17.62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.38 8.88L7.13 9.63L9.38 7.38" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M12.37 15.88H17.62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.38 15.88L7.13 16.63L9.38 14.38"  stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="nav-text">Task</span>
+            </div>
+          </button>
+          <button class="nav-btn projects">
+            <div class="nav-btn-wrap">
+              <svg class="nav-icon fill" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="#787486">
+                <path d="M0 10H8V0H0V10ZM0 18H8V12H0V18ZM10 18H18V8H10V18ZM10 0V6H18V0H10Z"/>
+              </svg>
+              <span class="nav-text">Projects</span>
+            </div>
+          </button>
+          <button class="nav-btn reports">
+            <div class="nav-btn-wrap">
+              <svg class="nav-icon stroke" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none" stroke="#4483F7">
+                <path
+                  d="M8.755 12.245V4.48999C4.47 4.48999 1 7.95999 1 12.245C1 16.53 4.47 20 8.755 20C13.04 20 16.51 16.53 16.51 12.245H8.755Z"
+                  stroke-width="1.5" stroke-miterlimit="10" />
+                <path d="M11.455 1.5C15.9 1.5 19.5 5.105 19.5 9.545H11.455V1.5Z"  stroke-width="1.5"
+                  stroke-miterlimit="10" />
+              </svg>
+              <span class="nav-text">Reports</span>
+            </div>
+          </button>
+        </div>
+        <button class="nav-btn addtask">
+          <i class="bi bi-plus"></i>
+          Add Task
+        </button>
+      </div>
+  
+    </nav>
+    <!-- End of Navbar-->
+
+    <!-- Main Content -->
+    <main>
+      <header class="header">
+        <div class="top">
+          <ul class="breadcrumb">
+            <li><a href="#">Projects MT</a></li>/
+            <li><a href="#">Commercial Projects</a></li>/
+            <li><a href="#" class="active">Team Phoenix</a></li>
+          </ul>
+        </div>
+        <div class="mid">
+          <h1>Creating an Website for yourcompany.com</h1>
+          <div class="date">
+            <i class="bi bi-calendar4"></i>
+            <div class="date-info">
+              <span>Creation Date</span>
+              <span>17.10.2023</span>
+            </div>
+            <i class="bi bi-pen"></i>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="member-wrap">
+            <div class="left">
+              <p>
+                All team members: <span>12</span>
+              </p>
+              <div class="members">
+                <div class="members img"></div>
+                <div class="members img"></div>
+                <div class="members img"></div>
+                <div class="members img"></div>
+                <div class="members img"></div>
+                <div class="members img"></div>
+              </div>
+              <button class="invite">
+                <i class="bi bi-person-add"></i>
+                invite
+              </button>
+            </div>
+            <div class="right">
+              <div class="filter-wrap">
+                <button class="filter">
+                  <i class="bi bi-funnel"></i>
+                  Filter
+                  <i class="bi bi-caret-down-fill"></i>
+                </button>
+                <button class="filter">
+                  <i class="bi bi-sort-down-alt">
+                  </i>
+                  Sort
+                  <i class="bi bi-caret-down-fill"></i>
+                </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="card-grid">
+        <div class="category todo">
+          <div class="category-title">
+            <div class="bullet"></div>
+            <h3>To Do</h3>
+            <p class="counter-card">10</p>
+          </div>
+          <!-- Card Wrap -->
+          <div class="task-cardwrap">
+            <!-- <div class="cards-container">
+              <div class="taskcard-main">
+                <div class="head">
+                  <div class="project-name">Project name</div>
+                  <section class="card-menu">
+                    <i class="bi bi-three-dots"></i>
+                  </section>
+                </div>
+                <div class="body">
+                  <h3 class="card-title">Brainstorming</h3>
+                  <p>Brainstorming brings team members' diverse experience into play.</p>
+                </div>
+                <div class="foot">
+                  <p class="priority low active">Low</p>
+                  <p class="priority Medium active">Medium</p>
+                  <p class="priority high active">High</p>
+                  <p class="priority complete active">Complete</p>
+                </div>
+                <div class="taskcard-menu">
+                  <input type="button" class="menu edit" id="edits" value="Edit">
+                  <input type="button" class="menu delete" id="deletes" value="Delete">
+                  <input type="button" class="menu move1" value="Move to In Progress">
+                  <input type="button" class="menu move2" value="Move to Done">
+                </div>
+              </div>
+            </div> -->
+            <div id="todoList">
+            </div>
+          </div>
+          
+        </div>
+        <div class="category in-progress">
+          <div class="category-title">
+            <div class="bullet"></div>
+            <h3>In Progress</h3>
+            <p class="counter-card">10</p>
+          </div>
+          <div class="task-cardwrap">
+            <div id="inProgressList">
+              <!-- DOM Content -->
+            </div>
+          </div>
+        </div>
+        <div class="category completed">
+          <div class="category-title">
+            <div class="bullet"></div>
+            <h3>Done</h3>
+            <p class="counter-card">10</p>
+          </div>
+          <div class="task-cardwrap">
+            <div id="completedList">
+              <!-- DOM Content -->
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <!-- End of Main Content -->
+    <div id="formContainer">
+      <section class="myForm">
+        <form id="form-input">
+          <a class="closeButton">
+            <i class="bi bi-x"></i>
+          </a>
+          <div class="form-wrap">
+            <section class="form-title">
+              <h1>Add Task</h1>
+            </section>
+            <section class="formname">
+              <label for="project">Project</label>
+              <input type="text" name="project" placeholder="Your Project Name" id="project">
+            </section>
+            <section class="formname">
+              <label for="tasknameinput">Task Name</label>
+              <input type="text" name="taskname" placeholder="Your Task Name" id="tasknameinput" >
+            </section>
+            <section class="formname">
+              <label for="description">Description</label>
+              <textarea name="taskdesc" id="description" rows="3" cols="40" autocomplete="off" class="descarea"
+                placeholder="Your Task Description"></textarea>
+            </section>
+          </div>
+          <div class="option-container">
+            <div class="optionwrap">
+              <section class="option">
+                <label for="assign">Assign to</label>
+                <select name="assign" id="assign">
+                  <option value="todo">To Do</option>
+                  <option value="inprogress">In Progress</option>
+                  <option value="done">Done</option>
+                </select>
+              </section>
+      
+              <section class="option">
+                <label for="priority">Priority</label>
+                <select name="status" id="priority">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                  <option value="complete">Complete</option>
+                </select>
+              </section>
+            </div>
+          </div>
+          <div class="submission">
+            <input type="submit" class="save" value="Submit">
+            <input type="submit" class="update" value="Update">
+            <input type="button" class="cancel" value="Cancel">
+          </div>
+        </form>
+      </section>
+      <div class="blankArea"></div>
+    </div>
+  </div>
+
+
+  <script src="/public/scripts/main.js"></script>
+</body>
+</html>

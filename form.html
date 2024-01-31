@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/public/styles/style.css">
+</head>
+<body>
+  <section class="myForm">
+    <form action="index.html" method="post">
+      <button class="closeButton" type="submit" >
+        <i class="bi bi-x"></i>
+      </button>
+      <div class="form-wrap">
+        <section class="form-title">
+          <h1>Add Task</h1>
+        </section>
+        <section class="formname">
+          <label for="project">Project</label>
+          <input type="text" name="project" id="taskname" placeholder="Your Project Name">
+        </section>
+        <section class="formname">
+          <label for="taskname">Task Name</label>
+          <input type="text" name="taskname" id="taskname" placeholder="Your Task Name">
+        </section>
+        <section class="formname">
+          <label for="taskdesc">Description</label>
+          <textarea name="taskdesc" id="description" rows="3" cols="40" autocomplete="off" class="descarea" placeholder="Your Task Description"></textarea>
+        </section>
+      </div>
+      <div class="option-container">
+        <div class="optionwrap">
+          <section class="option">
+            <label for="assign">Assign to</label>
+            <select name="assign" id="assign">
+              <option value="todo">To Do</option>
+              <option value="inprogress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </section>
+  
+          <section class="option">
+            <label for="status">Priority</label>
+            <select name="status" id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Complete">Complete</option>
+            </select>
+          </section>
+        </div>
+      </div>
+      <div class="submission">
+        <button type="submit" class="save">Save</button>
+        <button type="submit" class="cancel">Cancel</button>
+      </div>
+    </form>
+  </section>
+  <script src="/public/scripts/main.js"></script>
+</body>
+</html>
